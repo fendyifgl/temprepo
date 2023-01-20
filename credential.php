@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     
-    include_once 'asset/aws/aws-autoloader.php';
+    include_once 'assets/aws/aws-autoloader.php';
 
     use Aws\SecretsManager\SecretsManagerClient; 
     use Aws\Exception\AwsException;
