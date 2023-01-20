@@ -2,7 +2,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    require 'aws/aws-autoloader.php';
+    require 'assets/aws/aws-autoloader.php';
 
     use Aws\SecretsManager\SecretsManagerClient; 
     use Aws\Exception\AwsException;
