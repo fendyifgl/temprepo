@@ -12,8 +12,8 @@
         'region' => 'ap-southeast-3'
     ]);
 
-    $secretNameDB = 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/hlindo-RoiUtk';
-    $secretNameFTP = 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/ftphlindo-NCHDaA';
+    $secretNameDB = 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/enota-NS12tP';
+    $secretNameFTP = 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/ftpenota-MK8goO';
 
     try {
         $resultDB = $client->getSecretValue([
