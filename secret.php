@@ -12,8 +12,8 @@
         'region' => 'ap-southeast-3'
     ]);
 
-    $secretNameDB = @$_POST['sndb'] ? @$_POST['sndb'] : 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/hlindo-RoiUtk';
-    $secretNameFTP = @$_POST['snftp'] ? @$_POST['snftp'] : 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/ftphlindo-NCHDaA';
+    $secretNameDB = @$_POST['sndb'] ? @$_POST['sndb'] : 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/enota-NS12tP';
+    $secretNameFTP = @$_POST['snftp'] ? @$_POST['snftp'] : 'arn:aws:secretsmanager:ap-southeast-3:402663288391:secret:prd/legacy/ftpenota-MK8goO';
 
     try {
         $resultDB = $client->getSecretValue([
