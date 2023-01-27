@@ -264,7 +264,7 @@ if($upload == 1){
 
 		if($noPolis != "" && $kondisiUpdate != "" && $userid != ""){
 			if ($kondisiUpdateUpper == "RED" || $kondisiUpdateUpper == "GREEN" || $kondisiUpdateUpper == "AMBER") {
-				$queryCheck = "SELECT kondisi_update FROM temporary_import WHERE NO_POLIS = '$noPolis' AND STATUS != '8'";
+				$queryCheck = "SELECT kondisi_update FROM $DBUser.temporary_import WHERE NO_POLIS = '$noPolis' AND STATUS != '8'";
 				$DB1->parse($queryCheck);
 	
 				if(!$DB1->execute()) {
@@ -294,13 +294,13 @@ if($upload == 1){
 
 				if (!$errorTemporary) {
 					$queryCheckNoPol = "SELECT COUNT(PREFIXPERTANGGUNGAN) AS jumlah_prefix, keterangan
-					FROM rpt_prefix_noper_restru 
+					FROM $DBUser.rpt_prefix_noper_restru 
 					WHERE prefixpertanggungan = 
 					(SELECT prefixpertanggungan
-					FROM tabel_200_pertanggungan
+					FROM $DBUser.tabel_200_pertanggungan
 					WHERE nopol = '$noPolis') AND nopertanggungan = 
 					(SELECT nopertanggungan
-					FROM tabel_200_pertanggungan
+					FROM $DBUser.tabel_200_pertanggungan
 					WHERE nopol = '$noPolis')
 					GROUP BY keterangan";
 	
@@ -324,7 +324,7 @@ if($upload == 1){
 							$errorKeterangan = true;
 							break;
 						} else {
-							$query = "INSERT INTO temporary_import(NO_POLIS,KONDISI_UPDATE,STATUS,TANGGAL_PENGAJUAN,CREATED_BY) 
+							$query = "INSERT INTO $DBUser.temporary_import(NO_POLIS,KONDISI_UPDATE,STATUS,TANGGAL_PENGAJUAN,CREATED_BY) 
 							VALUES('$noPolis','$kondisiUpdate',0,SYSDATE,'$userid')";
 						}
 					}
