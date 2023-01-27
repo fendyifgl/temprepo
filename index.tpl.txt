@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-Equiv="Cache-Control" Content="no-cache">
+<meta http-Equiv="Pragma"    Content="no-cache">
+<meta http-Equiv="Expires"    Content="0">
+<title><!--{$TITLE}--></title>
+<link rel="stylesheet" href="<!--{$HREF_CSS}-->/clarance.css" type="text/css">
+<SCRIPT LANGUAGE="JavaScript" SRC="<!--{$HREF_JS}-->/global.js"></SCRIPT>
+</HEAD>
+<!-- oncontextmenu="return false;" -->
+<body class="contentPage" >
+<form name="FormTrxAll" method="post" target="mainReport">
+<table border="0" width="100%" align="center" cellpadding="2" cellspacing="2">
+<tr valign="top">
+	<td width="30%">
+		 <table border="0" width="100%" align="center" cellpadding="2" cellspacing="2">
+		 <tr>
+			<td width="10%">No Trans</td>
+			<td width="5%">:</td>
+			<td>
+				<input type="text" name="notrans" ID="notrans" value="" size="10" maxlength="7">
+				<input type="hidden" name="user" ID="user" value="<!--{$USERNAME}-->" readonly size="10">
+				<input type="hidden" name="kantor" ID="kantor" value="<!--{$KODEKANTOR}-->">
+			</td>
+		 </tr>
+		  <tr>
+			<td width="10%">DDMMYYYY</td>
+			<td width="5%">:</td>
+			<td><input type="text" name="tanggal" ID="tanggal" value="<!--{$DEFAULT_TANGGAL}-->" size="10" maxlength="8"></td>
+		 </tr>
+		
+		 </table>
+	</td>
+	<td>
+	<fieldset>
+	<legend>Filter Data</legend>
+				 <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+				 <tr>
+				 <td>
+					<!--<input type="radio" name="viewtype" id="vAll" value="1" checked>
+					<label for="vAll">Semua</label>&nbsp;&nbsp;&nbsp;-->
+					<input type="radio" name="viewtype" id="vKas" value="2" checked>
+					<label for="vKas">Kas</label>&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="viewtype" id="vBank" value="3" >		
+					<label for="vBank">Bank</label>&nbsp;&nbsp;&nbsp;					
+					<input type="radio" name="viewtype" id="vMemorial" value="4" >		
+					<label for="vMemorial">Memorial</label>&nbsp;&nbsp;&nbsp;					
+					<input type="radio" name="viewtype" id="vLink" value="5" >		
+					<label for="vLink">Link</label>	
+				</td>
+				</tr>
+				
+				</table>
+		</fieldset>		
+			
+	</td>
+	<td>
+		<table border="0" width="100%" align="center" cellpadding="2" cellspacing="2">
+		 <tr>
+			<td colspan="3">
+				<input type="button" value="Retrv" onClick="getProcced(this.form);">&nbsp;
+				<input type="button" value="Insert" onClick="setInsert(this.form);">&nbsp;
+				<input type="button" value="Move" onClick="openPopUpHistory('../../../esip/pindah_transaksi.php','popup');">
+				<!--{if $TIPE_USER == 'VTM' || $TIPE_USER == 'VT' && $LEVEL_USER != '1'}-->
+					<input type="button" value="Approval" onClick="openPopUpHistory('../../../esip/pindah_transaksi_approval.php','popup');">
+				<!--{/if}-->
+				<!--{if $NAMALENGKAP == 'AKUNTANSI'}-->
+					<input type="button" value="Insert" onClick="setInsert(this.form);">
+				<!--{/if}-->&nbsp;
+			</td>
+
+		 </tr>
+		 
+		 <tr>
+			<td class="altBintangReq">
+				<!--
+				 <pre>Info : 1. Untuk JURNAL POS SILANG, koreksi posisi <b>Debet/Kredit</b> dgn tombol "Switch D/K" di user verifikator <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Untuk Jurnal lain yang salah <b>Nominal</b>, <b>Akun</b> atau <b>Debet/Kredit</b> harap dibuat Jurnal koreksi</pre>
+				 -->
+
+				  <!-- <pre>Info :1. Untuk Jurnal yang salah <b>Nominal</b>, <b>Akun</b> atau posisi <b>Debet/Kredit</b> harap dibuat Jurnal koreksi</pre> -->
+				
+			</td>
+		 </tr>
+		 </table>
+	</td>
+	<td>
+		<table border="0" width="100%" align="center" cellpadding="2" cellspacing="2">
+		 <tr>
+			<td colspan="3" align="left"></td>
+		 </tr>
+		  <tr>
+			<td>&nbsp;</td>
+		 </tr>
+		 <tr>
+			<td>
+				&nbsp;
+			</td>
+		 </tr>
+		 </table>
+	</td>
+	<td style="display:none;">
+		<table border="0" width="100%" align="center" cellpadding="2" cellspacing="2">
+		  <tr>
+			<td colspan="3" align="right"><input type="checkbox" name="priview" id="priview"><label for="priview">Priview</label></td>
+		 </tr>
+		  <tr>
+			<td colspan="3" align="right"><input type="button" value="Print" onclick=""></td>
+		 </tr>
+		 <tr>
+			<td>
+				
+			</td>
+		 </tr>
+		 </table>
+	</td>
+</tr>
+<tr>
+	<td colspan="10">
+		<iframe src="" frameborder="1" width="100%" name="mainReport" ID="mainReport" height="490" scrolling="yes"></iframe>
+	</td>
+</tr>
+<tr>
+<td colspan="10">
+<!-- <div ID="agendatxt">
+	Keterangan :<br/>
+	* Tombol EDIT digunakan untuk mengedit satu record transaksi dan harus di simpan menggunakan tombol SAVE yang ada dirow yang sama
+</div> -->
+</td>
+</tr>
+</table>
+</form>
+
+</BODY>
+</HTML>
