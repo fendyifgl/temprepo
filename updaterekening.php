@@ -272,7 +272,7 @@
 
 		curl_close($curl);
 
-		if (count($data) > 0) {
+		if (count($data) > 0 && (!in_array($respcode, array('','CORP-02-013','0103','CORP-00-003') || !in_array($respdescription, array('Anda Tidak Berhak','Transaksi anda tidak dapat diproses','Unknown Account Type','beneficiary_bank_code tidak valid')))) {
 			$sql = "INSERT INTO nadm.tabel_100_klien_rekening_api (batch, prefixpertanggungan, nopertanggungan,
 						kdbank, tglrequest, request, response, code, description, remark, accountname, accountnumber, 
 						currency, status, tglbatch)
