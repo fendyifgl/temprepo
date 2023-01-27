@@ -564,7 +564,7 @@ if (!empty($_POST['no_polis'])) {
 <table border="1" cellpadding="2" cellspacing="0" style="border-collapse:separate;border-color:#f7f7f5;" width="100%" id="AutoNumber1">
 <thead>
 		<tr>
-		  <th class="verdana7blu">No <?= $namusr ?></th>
+		  <th class="verdana7blu">No</th>
           <th class="verdana7blu">No Polis</th>
           <th class="verdana7blu">Kondisi Update</th>
           <th class="verdana7blu">Tanggal Pengajuan</th>
