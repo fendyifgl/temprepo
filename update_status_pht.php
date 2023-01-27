@@ -236,7 +236,7 @@ if($upload == 1){
     //upload file ke server
     $target = basename($_FILES['file']['name']) ;
     $name = str_replace(' ','_',$target);
-    $path = 'filelifesaver/';
+    $path = 'upload/';
     $fileupload = $path.$name;
     move_uploaded_file($_FILES['file']['tmp_name'],$fileupload);
     
