@@ -40,7 +40,7 @@
 				if (in_array(@$arr['CODE'], array('','CORP-02-013','0103','CORP-00-003')) || in_array(@$arr['DESCRIPTION'], array('Anda Tidak Berhak','Transaksi anda tidak dapat diproses','Unknown Account Type','beneficiary_bank_code tidak valid'))) {
 					$tombolmanual = true;
 				}
-				if (@$arr['CODE']!= 'Inquiry Success' && in_array(@$arr['kdbank'], array('212', '125','BTN','126'))) {
+				if (@$arr['CODE']!= '0000' && in_array(@$arr['kdbank'], array('212', '125','BTN','126'))) {
 					$tombolmanual = true;
 				}
 			} else {
@@ -52,7 +52,7 @@
 				if (in_array($responseCode, array('','CORP-02-013','0103','CORP-00-003')) || in_array($responseDesc, array('Anda Tidak Berhak','Transaksi anda tidak dapat diproses','Unknown Account Type','beneficiary_bank_code tidak valid'))) {
 					$tombolmanual = true;
 				}
-				if ($responseCode!= 'Inquiry Success' && in_array($kdbank, array('212', '125','BTN','126'))) {
+				if ($responseCode!= '0000' && in_array($kdbank, array('212', '125','BTN','126'))) {
 					$tombolmanual = true;
 				}
 			}
