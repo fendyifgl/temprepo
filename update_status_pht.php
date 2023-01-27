@@ -569,7 +569,7 @@ if (!empty($_POST['no_polis'])) {
           <th class="verdana7blu">Kondisi Update</th>
           <th class="verdana7blu">Tanggal Pengajuan</th>
 		  <th class="verdana7blu">Status</th>
-		  <?php if ($namusr == "YAN YAN MULYANA") { ?>
+		  <?php if ($modul == "POA") { ?>
 		  <th class="verdana7blu"><input type="checkbox" name="xx" onClick="Cekbok(this.form.xx.checked);" /></th>
 		  <?php } ?>
 		</tr>
@@ -584,7 +584,7 @@ if (!empty($_POST['no_polis'])) {
 	to_char(tanggal_penerimaan,'dd/mm/yyyy') as tanggal_penerimaan,
 	status
 	from $DBUser.temporary_import
-	$tanggalPengajuan $statusQuery $noPolisQuery ORDER BY id DESC";
+	$tanggalPengajuan $statusQuery $noPolisQuery ORDER BY tanggal_pengajuan DESC";
     $DB->parse($sql);
 	$DB->execute();
 ?>
@@ -604,7 +604,7 @@ if (!empty($_POST['no_polis'])) {
 	<?php } else if ($row['STATUS'] == 8) { ?>
 		<td align="center"><span style="color:gray">Data Telah Ditimpa oleh <?= $row['UPDATED_BY']." pada tanggal " .$row['TANGGAL_PENERIMAAN'];?></span></td>
 	<?php } ?>
-	<?php if ($namusr == "YAN YAN MULYANA") { ?>
+	<?php if ($modul == "POA") { ?>
 		<?php if ($row['STATUS'] == 2) { ?>
 			<td align='center' style='border-left-width: 1; border-right-width: 1; border-top: 1px solid #D8E1FA; border-bottom: 1px solid #D8E1FA'></td>
 		<?php } else if ($row['STATUS'] == 8) { ?>
@@ -614,7 +614,7 @@ if (!empty($_POST['no_polis'])) {
 		<?php } ?>
 	<?php } ?>
 <?php } ?>
-<?php if ($namusr == "YAN YAN MULYANA") { ?>
+<?php if ($modul == "POA") { ?>
 <tr>
 	<td colspan ='5'></td>
 	<td align="center">
