@@ -1,7 +1,7 @@
 <?php
 	include "../../includes/session.php";
 	include "../../includes/database.php";
-	include "excel_reader.php";
+	include "../agen/excel_reader.php";
 	
 	$UPDATEDB = new Database($userid,$passwd,$DBName);
 	$DB = new Database($userid,$passwd,$DBName);
